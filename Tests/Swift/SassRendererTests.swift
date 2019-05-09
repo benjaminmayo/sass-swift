@@ -9,10 +9,23 @@ import XCTest
 import Sass
 
 class SassRendererTests: XCTestCase {
-    func testBasic() {
+    func testBasic() throws {
         let renderer = SassRenderer()
         
-        let result = renderer.compile("body { a { background-color: red; } }")
-        print(result)
+        let input = "body { a { background-color: red; } }"
+        let expectation = """
+        body a {
+            background-color: red;
+        }
+
+        """
+            
+        let result = try renderer.compile(input)
+            
+        XCTAssertEqual(result, expectation)
     }
+    
+    static let allTests = [
+        ("testBasic", testBasic),
+    ]
 }

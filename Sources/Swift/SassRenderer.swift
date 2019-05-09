@@ -18,8 +18,6 @@ public final class SassRenderer {
         self.applyOptions(to: options!)
         
         if !filePathLabel.isEmpty {
-            let filePathLabel = strdup(filePathLabel)
-            
             sass_option_set_input_path(options!, filePathLabel)
         }
         
