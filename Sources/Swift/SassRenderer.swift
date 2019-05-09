@@ -29,7 +29,7 @@ public final class SassRenderer {
         
         defer {
             sass_delete_compiler(compiler)
-            sass_delete_options(options)
+            sass_delete_data_context(context)
         }
         
         sass_compiler_parse(compiler)
