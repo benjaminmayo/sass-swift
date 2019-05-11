@@ -110,10 +110,8 @@ extension SassRenderer {
         
         sass_option_set_source_comments(optionsContext, self.options.canInsertSourceReferenceComments)
         
-        if let baseURLForImportedFiles = self.options.baseURLForImportedFiles {
-            let includePath = strdup(baseURLForImportedFiles.path)
-            
-            sass_option_set_include_path(optionsContext, includePath)
+        if let baseURLForImportedFiles = self.options.baseURLForImportedFiles {            
+            sass_option_set_include_path(optionsContext, baseURLForImportedFiles.path)
         }
     }
 }

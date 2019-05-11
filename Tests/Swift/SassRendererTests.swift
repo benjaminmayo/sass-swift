@@ -15,7 +15,7 @@ class SassRendererTests: XCTestCase {
         let input = "body { a { background-color: red; } }"
         let expectation = """
         body a {
-            background-color: red;
+          background-color: red;
         }
 
         """
